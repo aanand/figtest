@@ -1,0 +1,4 @@
+sockettest:
+    build: .
+    volumes:
+        - /var/run/docker.dock:/docker.sock
