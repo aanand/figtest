@@ -1,0 +1,25 @@
+
+This repo tests whether or not mounting a socket with fig works as expected.
+
+First you should build the image with:
+
+  fig build
+
+Second you can test the image with:
+
+  ./run.sh
+
+Which will execute the image via:
+
+  docker run -i -t -v /var/run/docker.sock:/docker.sock figtest_sockettest
+
+
+This will contact the volume mounted docker socket from the host and curl the 
+containers endpoint. This will cause the host's containers to be displayed.
+
+Now you can try the same thing with fig:
+
+    fig up
+
+
+You can see that fig does not get a proper mounting of the socket
